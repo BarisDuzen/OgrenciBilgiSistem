@@ -1,0 +1,24 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data.Entity;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace OgrenciBilgiSistemi.models
+{
+    public class OkulContext : DbContext
+    {
+        // base içindeki isim, App.config'deki <add name="OgrenciBilgiDB" ... /> ile aynı olmalı
+        public OkulContext() : base("name=OgrenciBilgiDB")
+        {
+        }
+
+        // Yazdığın model sınıflarını (tabloları) buraya tanımlıyoruz
+        public DbSet<Fakulte> Fakulteler { get; set; }
+        public DbSet<Bolum> Bolumler { get; set; }
+        public DbSet<Ogrenci> Ogrenciler { get; set; }
+        public DbSet<Ders> Dersler { get; set; }
+        public DbSet<OgrenciDers> OgrenciDersler { get; set; }
+    }
+}
