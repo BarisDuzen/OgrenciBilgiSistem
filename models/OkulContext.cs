@@ -9,12 +9,11 @@ namespace OgrenciBilgiSistemi.models
 {
     public class OkulContext : DbContext
     {
-        // base içindeki isim, App.config'deki <add name="OgrenciBilgiDB" ... /> ile aynı olmalı
+
         public OkulContext() : base("name=OgrenciBilgiDB")
         {
         }
 
-        // Yazdığın model sınıflarını (tabloları) buraya tanımlıyoruz
         public DbSet<Fakulte> Fakulteler { get; set; }
         public DbSet<Bolum> Bolumler { get; set; }
         public DbSet<Ogrenci> Ogrenciler { get; set; }

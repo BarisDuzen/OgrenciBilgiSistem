@@ -21,11 +21,10 @@ namespace OgrenciBilgiSistemi.models
 
         public int fakulteID { get; set; }
 
-        // İlişki: Her bölüm bir fakülteye bağlıdır
         [ForeignKey("fakulteID")]
         public virtual Fakulte Fakulte { get; set; }
 
-        // İlişki: Bir bölümde birden fazla öğrenci olur
+     
         public virtual ICollection<Ogrenci> Ogrenciler { get; set; }
 
         public Bolum()
